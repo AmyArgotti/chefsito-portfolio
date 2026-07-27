@@ -9,6 +9,10 @@ Russia.
 The site presents Redouane’s culinary story, selected dishes, restaurant
 experience, professional skills, education, languages, and downloadable CVs.
 
+## Live portfolio
+
+[amyargotti.github.io/chefsito-portfolio](https://amyargotti.github.io/chefsito-portfolio/)
+
 ## Languages
 
 The complete portfolio is available in:

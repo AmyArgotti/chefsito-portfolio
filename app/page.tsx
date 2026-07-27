@@ -4,23 +4,25 @@ import { useEffect, useState } from "react";
 
 type Locale = "en" | "ru" | "fr";
 type DishType = "sea" | "fire" | "earth";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const asset = (path: string) => `${basePath}${path}`;
 
 const dishImages: { src: string; type: DishType }[] = [
-  { src: "/images/prawn-skewer.jpeg", type: "sea" },
-  { src: "/images/steak-board.jpeg", type: "fire" },
-  { src: "/images/octopus.jpeg", type: "sea" },
-  { src: "/images/kofta.jpeg", type: "fire" },
-  { src: "/images/truffle-ravioli.jpeg", type: "earth" },
-  { src: "/images/seafood-salad.jpeg", type: "sea" },
-  { src: "/images/beef-salad.jpeg", type: "earth" },
-  { src: "/images/lamb.jpeg", type: "fire" },
-  { src: "/images/broth.jpeg", type: "earth" },
+  { src: asset("/images/prawn-skewer.jpeg"), type: "sea" },
+  { src: asset("/images/steak-board.jpeg"), type: "fire" },
+  { src: asset("/images/octopus.jpeg"), type: "sea" },
+  { src: asset("/images/kofta.jpeg"), type: "fire" },
+  { src: asset("/images/truffle-ravioli.jpeg"), type: "earth" },
+  { src: asset("/images/seafood-salad.jpeg"), type: "sea" },
+  { src: asset("/images/beef-salad.jpeg"), type: "earth" },
+  { src: asset("/images/lamb.jpeg"), type: "fire" },
+  { src: asset("/images/broth.jpeg"), type: "earth" },
 ];
 
 const cvFiles: Record<Locale, string> = {
-  en: "/cv/Redouane-El-Haloui-CV-English.pdf",
-  ru: "/cv/Redouane-El-Haloui-CV-Russian.pdf",
-  fr: "/cv/Redouane-El-Haloui-CV-Francais.pdf",
+  en: asset("/cv/Redouane-El-Haloui-CV-English.pdf"),
+  ru: asset("/cv/Redouane-El-Haloui-CV-Russian.pdf"),
+  fr: asset("/cv/Redouane-El-Haloui-CV-Francais.pdf"),
 };
 
 const copy = {
@@ -195,7 +197,7 @@ export default function Home() {
           <div className="hero-index"><span>{t.home}</span><span>{t.current}</span></div>
         </div>
         <div className="hero-image">
-          <img src="/images/chef-portrait.png" alt="Redouane El Haloui in a black chef jacket" />
+          <img src={asset("/images/chef-portrait.png")} alt="Redouane El Haloui in a black chef jacket" />
           <div className="image-badge"><strong>8+</strong><span>{t.badge}</span></div>
           <p className="vertical-label">{t.vertical}</p>
         </div>
@@ -244,7 +246,7 @@ export default function Home() {
       </section>
 
       <section className="mind section">
-        <div className="mind-image"><img src="/images/salmon.jpeg" alt="Salmon served on charred wood" /></div>
+        <div className="mind-image"><img src={asset("/images/salmon.jpeg")} alt="Salmon served on charred wood" /></div>
         <div className="mind-copy"><div className="section-number">{t.educationKicker}</div><h2>{t.educationTitle}</h2><p>{t.education}</p><div className="language-list">{t.languages.map((language) => <span key={language}>{language}</span>)}</div></div>
       </section>
 
